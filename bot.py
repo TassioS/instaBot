@@ -1,11 +1,7 @@
-import sys
+from pages.main.mainFactory import openPage
 from selenium import webdriver
 from json import load
-sys.path.insert(0,'utils')
-sys.path.insert(1,'pages/login')
-from loginFactory import login
-from elementTools import *
-from loginObjects import *
+from pages.login.loginFactory import login
 
 data = load(open('config.json'))
 
@@ -14,4 +10,7 @@ driver.get("https://www.instagram.com/")
 
 
 login(driver, data['username'], data['password'])
-driver.quit()
+for page in data['pages']:
+    openPage(driver, page)
+
+#driver.quit()

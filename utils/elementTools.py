@@ -4,7 +4,6 @@ from typing_extensions import Literal
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
 
 def waitElement(driver: WebDriver, locator: Literal, elementValue: str):
